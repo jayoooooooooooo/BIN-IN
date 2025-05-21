@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - BIN IN</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="signin.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .account-info {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 150px;
+            border-radius: 20%;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>BIN:IN</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="tracking.html">Tracking</a>
+            <a href="shop.html">Shop</a>
+            <a href="about us.html">About Us</a>
+            <a href="signin.html">Sign In</a>
+        </nav>
+    </header>
+
+<main class="account-info">
+    <h2>My Account</h2>
+    <div id="user-details"></div>
+    <button onclick="logout()">Logout</button>
+</main>
+
+<footer>
+    <p>&copy; 2025 BINITIN</p>
+</footer>
+
+<script>
+    const userData = JSON.parse(localStorage.getItem('user'));
+    const userDetailsDiv = document.getElementById('user-details');
+
+    if (userData) {
+        userDetailsDiv.innerHTML = `
+            <img src="${userData.profilePic}" alt="Profile Picture">
+            <p><strong>Name:</strong> ${userData.name}</p>
+            <p><strong>Email:</strong> ${userData.email}</p>
+            <p><strong>Age:</strong> ${userData.age}</p>
+            <p><strong>Address:</strong> ${userData.address}</p>
+        `;
+    } else {
+        userDetailsDiv.innerHTML = '<p>No user data found. Please log in.</p>';
+        window.location.href = 'signin.html';
+    }
+
+    function logout() {
+        localStorage.removeItem('user');
+        window.location.href = 'signin.html';
+    }
+</script>
+
+</body>
+</html>

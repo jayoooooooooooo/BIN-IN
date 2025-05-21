@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - BIN IN</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="signin.css">
+    <script>
+    const userData = JSON.parse(localStorage.getItem('user'));
+    if (!userData) {
+        window.location.href = 'signin.html';
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>BIN:IN</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about us.html">About Us</a>
+            <a href="signin.html">Sign In</a>
+        </nav>
+    </header>
+
+<main class="signin-form">
+    <h2>Login</h2>
+    <form id="login-form">
+        <label for="email">Email address:</label>
+        <input type="email" id="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <section>
+        <button type="submit">Login</button>
+        </section>
+    </form>
+    <p><a href="#">Forgot Password?</a></p>
+    <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+</main>
+
+<footer>
+    <p>&copy; 2025 BINITIN</p>
+</footer>
+
+<script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        const userData = JSON.parse(localStorage.getItem('user'));
+
+        if (userData && userData.email === email && userData.password === password) {
+            window.location.href = 'account.html';
+        } else {
+            alert('Invalid email or password. Please try again.');
+        }
+    });
+</script>
+
+</body>
+</html>

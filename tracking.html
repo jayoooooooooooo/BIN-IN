@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracing - BIN IN</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="tracking.css">
+    <script>
+    const userData = JSON.parse(localStorage.getItem('user'));
+    if (!userData) {
+        window.location.href = 'signin.html';
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>BIN:IN</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about us.html">About Us</a>
+            <a href="signin.html">Sign In</a>
+        </nav>
+    </header>
+
+        <main class="tracing-map">
+            <h2>Tracing Location</h2>
+            <div style="position: relative;">
+                <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" loading="lazy" allowfullscreen 
+                            src="https://maps.google.com/maps?q=Bataan+Peninsula+State+University+-+Balanga+Campus+118+Don+Manuel+Banzon+Avenue%2C+Balanga%2C+2100+Bataan&layer=c&output=embed"></iframe>
+                </div>
+                <a href="https://mapembeds.com" rel="noopener" target="_blank" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">mapembeds.com</a>
+            </div>
+        </main>
+
+    <footer>
+        <p>&copy; 2025 BINITIN</p>
+        <p>Track. Tag. Transform.</p>
+    </footer>
+</body>
+</html>

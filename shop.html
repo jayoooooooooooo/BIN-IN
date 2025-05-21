@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIN IN - Shop</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="shop.css">
+    <script>
+    const userData = JSON.parse(localStorage.getItem('user'));
+    if (!userData) {
+        window.location.href = 'signin.html';
+    }
+    </script>
+</head>
+<body>
+
+<div id="notificationModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="notificationMessage"></p>
+    </div>
+</div>    
+
+<div class="header-background"></div>
+
+    <header>
+        <div class="logo">
+            <h1>BIN:IN</h1>
+            <link rel="stylesheet" href="shop.css">
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about us.html">About Us</a>
+            <a href="signin.html">Sign In</a>
+        </nav>
+    </header>
+
+    <div class="social-icons">
+        <a href="cart.html" class="cart-link">
+            <img src="cart.jpg" alt="Cart">
+        </a>
+    </div>
+
+    <h2>Featured Products</h2>
+    <section class="products">
+        <div class="product-item" data-id="1">
+            <img src="reusablenetmeshbag.jpg" alt="reusablenetmeshbag">
+            <h3>Reusable<br>
+            net/mesh bag</h3>
+            <p>₱250.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-id="2">
+            <img src="handwovenrattan.jfif" alt="handwovenrattan">
+            <h3>Handwoven rattan organizer</h3>
+            <p>₱300.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-id="3">
+            <img src="woodutensils.jpg" alt="woodutensils">
+            <h3>Wood made reusable utensils</h3>
+            <p>₱180.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-id="4">
+            <img src="reusablecoffefilter.jfif" alt="reusablecoffefilter">
+            <h3>Washable <br> coffee filter</h3>
+            <p>₱80.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+                <div class="product-item" data-id="5">
+            <img src="macrameropetumblerholder.jpg" alt="macrameropetumblerholder">
+            <h3>Macrame rope tumbler holder</h3>
+            <p>₱150.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-id="6">
+            <img src="reusablemeshbag.jpg" alt="reusablemeshbag">
+            <h3>Reusable <br> mesh bag</h3>
+            <p>₱120.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-id="7">
+            <img src="dishclothcover.jpg" alt="dishclothcover">
+            <h3>Reusable dish cloth cover</h3>
+            <p>₱85.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product-item" data-id="8">
+            <img src="gatheringbasket.jfif" alt="gatheringbasket">
+            <h3>Vintage wicker gathering basket</h3>
+            <p>₱350.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BINITIN</p>
+    </footer>
+
+<script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const productItem = this.parentElement;
+            const productId = productItem.getAttribute('data-id');
+            const productName = productItem.querySelector('h3').innerText;
+            const productImageUrl = productItem.querySelector('img').src;
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ id: productId, name: productName, image: productImageUrl });
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            showNotification(`${productName} has been added to your cart!`);
+        });
+    });
+
+    function showNotification(message) {
+        const modal = document.getElementById("notificationModal");
+        const notificationMessage = document.getElementById("notificationMessage");
+        const closeBtn = document.querySelector(".close");
+
+        notificationMessage.innerText = message;
+        modal.style.display = "block";
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

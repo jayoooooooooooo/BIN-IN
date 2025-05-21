@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIN IN</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <script>
+    const userData = JSON.parse(localStorage.getItem('user'));
+    if (!userData) {
+        window.location.href = 'signin.html';
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>BIN:IN</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about us.html">About Us</a>
+            <a href="signin.html">Sign In</a>
+        </nav>
+    </header>
+
+    <header>
+        <h1>Track. Tag. Transform. </h1>
+    </header>
+        <p>A smart and simple way to manage waste in your community—one tag at a time.</p>
+        
+        <a href="tracking.html" class="tracing-map">
+        <button>TrackMyBasura</button>
+        </a>
+
+    <header>
+        <div class="maps">
+            <img src="maps.jpg" alt="maps">
+        <div/>
+    </header>
+    
+    <section class="reward-points">
+        <h2>Reward Points</h2>
+        <div class="points-container">
+            <div class="point-item">
+            <img src="ecobytes.png" alt="reusablecoffefilter">
+            <p class="p-nts">EcoBytes</p>
+            <p class="p-ward">Rewarding small steps toward cleaner neighborhoods, with options to redeem or donate.</p></div>
+            <div class="point-item">
+            <img src="tagtokens.png" alt="reusablecoffefilter">
+            <p class="p-nts">TagTokens</p>
+            <p class="p-ward">Earn points for tagging bins, reporting waste, and eco-friendly purchases, then redeem them for sustainable rewards.</p></div>
+            <div class="point-item">
+            <img src="bincreds.png" alt="reusablecoffefilter">
+            <p class="p-nts">BIN:IN Credits</p>
+            <p class="p-ward">Reflect your total impact and can be used for rewards, events, or bin donations.</p></div>
+        </div>
+    </section>
+
+    <section class="bin-tracking">
+        <header class="bintrack">
+        <div class="binbin">
+        <h2>Bin Tracking</h2>
+        </div>
+        <div class="tracktrack">
+        <h2>Activity</h2>
+        </div>
+        </header>
+    </section>
+
+<section class="activity">
+    <div class="tagged-bins">
+        <div class="entry">
+            <div class="left">Existing Tagged Bins
+                <p class="p-en">see more</p>
+            </div>
+            <div class="right">Marked a Recycle Bin at DPSU Main
+                <p class="p-th">2hours ago</p>
+                <p class="judgename">John Gabriel</p>
+                <p class="judgebadge">Waste warrior</p>
+                <img src="progab.jpg" alt="profile" class="act-pro">
+            </div>
+        </div>
+        <div class="entry">
+            <div class="left">Daily Waste Contribution
+                <p class="p-en">see more</p>
+            </div>
+            <div class="right">Marked a Recycle Bin at SM Sibatang
+                <p class="p-th">5hours ago</p>
+                <p class="judgename">Marianne</p>
+                <p class="judgebadge">Waste warrior</p>
+                <img src="promar.jpg" alt="profile" class="act-pro">
+            </div>
+        </div>
+        <div class="entry">
+            <div class="left">Eco-bin Community Drive
+                <p class="p-en">see more</p>
+            </div>
+            <div class="right">Marked a Recycle Bin in Malabago Plaza
+                <p class="p-th">11hours ago</p>
+                <p class="judgename">Kei</p>
+                <p class="judgebadge">Waste warrior</p>
+                <img src="prokie.jpg" alt="profile" class="act-pro">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="button-container">
+    <button class="locate-btn">Locate Bins</button>
+    <button class="add-btn">Add New</button>
+</div>
+
+    <footer>
+        <p>&copy; 2025 BINITIN</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <style>
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+        #cart-items li {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        #cart-items img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .continue-shopping {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: bold; 
+        }
+        .continue-shopping:hover {
+            text-decoration: underline;
+        }
+        .checkout-button {
+            background-color: rgb(85, 129, 92);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+            width: 150px;
+        }
+        .checkout-button:hover {
+            background-color: rgb(76, 109, 91);
+        }
+    </style>
+</head>
+<body>
+<h2>Your Cart</h2>
+<a href="shop.html" class="continue-shopping">Continue Shopping</a>
+<ul id="cart-items"></ul>
+
+<button class="checkout-button" onclick="location.href='checkout.html'">Checkout</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsList = document.getElementById('cart-items');
+
+        function updateCartDisplay() {
+            cartItemsList.innerHTML = '';
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = '<li>Your cart is empty.</li>';
+            } else {
+                cart.forEach((item, index) => {
+                    const li = document.createElement('li');
+
+                    
+                    const img = document.createElement('img');
+                    img.src = item.image;
+                    img.alt = item.name;
+
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = `item-${index}`;
+                    checkbox.value = item.id;
+
+                    li.appendChild(img);
+                    li.appendChild(document.createTextNode(`${item.name} `));
+
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = 'Remove from Cart';
+                    removeButton.addEventListener('click', () => {
+                        cart.splice(index, 1);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        updateCartDisplay();
+                    });
+                    
+                    li.appendChild(checkbox);
+                    li.appendChild(removeButton);
+                    cartItemsList.appendChild(li);
+                });
+            }
+        }
+
+        updateCartDisplay();
+    });
+</script>
+
+</body>
+</html>

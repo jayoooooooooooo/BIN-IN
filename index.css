@@ -1,0 +1,277 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 0px;
+}
+
+p {
+    margin-top: 0px;
+    margin-left: 25px;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 20px;
+}
+
+.logo h1 {
+    color: rgb(32, 160, 32); 
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: rgb(32, 160, 32);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.maps {
+    border: black;
+    text-align: center;
+    width: 100px;
+    height: auto;
+    border-radius: 50px;
+}
+
+.log-waste:hover {
+    background-color: #FF4500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: rgb(32, 160, 32);
+    margin-left: 20px;
+    color: rgb(255, 255, 255); 
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.reward-points h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 50px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.reward-points, .bin-tracking, .activity {
+    padding: 20px;
+}
+
+.points-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.point-item {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.points-container img {
+    width: 300px;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.p-ward {
+    font-size: 15px;
+    max-width: 300px;
+    margin-left: 60px;
+    margin-top: 0px;
+    text-align: justify;
+}
+
+.p-nts {
+    font-size: 20px;
+    margin-left: 59px;
+    font-weight: bold;
+    margin-left: 60px;
+    text-align: left;
+    margin-top: 14px;
+    margin-bottom: 3px;
+}
+.feedback blockquote {
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.bintrack {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.binbin {
+    flex: 2;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.tracktrack {
+    flex: 1;
+    text-align: left;
+    font-size: 20px;
+    margin-right: 350px;
+}
+
+.act-pro {
+    height: 25px;
+    width: auto;
+    border-radius: 25px;
+}
+
+.judgename {
+    font-size: 12px;
+    position: absolute;
+    margin-left: 30px;
+}
+
+.judgebadge {
+    font-size: 11px;
+    position: absolute;
+    margin-left: 31px;
+    margin-top: 17px;
+    color: #8d8d8d;
+}
+
+h2 {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .bintrack {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tracktrack {
+        text-align: left;
+        margin-top: 10px;
+    }
+}
+
+.locate-btn {
+    background-color: rgb(32, 160, 32);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-btn {
+    background-color: rgb(216, 215, 215);
+    color: rgb(32, 160, 32);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.activity {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tagged-bins {
+    display: flex;
+    flex-direction: column;
+}
+
+.entry {
+    display: flex;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.left {
+    font-size: 18px;
+    color: #333;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.right {
+    font-size: 18px;
+    color: #555;
+    margin-left: 600px;
+    position: absolute;
+    border-left: 3px solid #8d8d8d; 
+    border-radius: 3px;
+    color: #555;
+    padding: 5px;
+}
+
+.p-en {
+    font-size: 15px;
+    margin-left: 0px;
+    margin-top: 5px;
+    color: #8d8d8d;
+}
+
+.p-th {
+    font-size: 15px;
+    margin-left: 0px;
+    margin-top: 5px;
+    font-weight: 50px;
+    color: #8d8d8d;
+}
+
+@media (max-width: 600px) {
+    .activity {
+        flex-direction: column;
+    }
+
+    .tagged-bins {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}

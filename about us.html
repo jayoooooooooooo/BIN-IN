@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BIN IN</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="about.css">
+    <script>
+    const userData = JSON.parse(localStorage.getItem('user'));
+    if (!userData) {
+        window.location.href = 'signin.html';
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>BIN:IN</h1>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about us.html">About Us</a>
+            <a href="signin.html">Sign In</a>
+        </nav>
+    </header>
+    
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <h4 class="aboutt">BIN:IN – More Than a Business, A Movement for a Greener Future</h4>
+    <div class="subhead"
+        <p>BIN:IN is a Philippine-based environmental system built to inspire a cleaner, greener future for all. More than a platform, BIN:IN is a movement that empowers communities to take active roles in proper waste disposal and environmental responsibility.
+
+Through features like waste tracking, GPS-based bin location tagging, real-time bin condition reporting, and a point-based reward system, BIN:IN turns everyday habits into meaningful change. It’s designed to make waste management simple, accessible, and rewarding.
+
+But BIN:IN doesn’t stop there. Users can also shop for eco-friendly merchandise through the platform, with every purchase directly helping fund the installation of trash bins in underserved areas across the country. It’s a system that links personal responsibility with collective progress.
+
+At BIN:IN, we believe sustainability isn’t just a goal—it’s a lifestyle. Together, we can turn small, conscious actions into nationwide impact.</p>
+    </div>
+
+    <section class="about-content">
+        <div class="text">
+            <h2>Local Partnerships & Sponsorships:</h2>
+            <p>BIN:IN will collaborate with:<br><br>•LGUs (Local Government Units) to integrate waste management efforts<br><br>•Eco-stores and green businesses for redeemable items and promotions<br><br>•Schools and Barangays for reward campaigns and cleanup challenges<br><br>•Sustainability Planning (B2B Feature):<br><br>•Aggregated data on waste tagging and bin condition reports can be offered to LGUs and environmental NGOs for a fee, to help with planning waste collection routes and community education programs.</p>
+        </div>
+        <img src="logo.png" alt="Profile Image">
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BINITIN</p>
+    </footer>
+</body>
+</html>
