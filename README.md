@@ -4,9 +4,9 @@ Welcome to the BIN-IN repository! This project is a simple front-end development
 
 ## Table of Contents
 
-- [Features](e-commerce)
-- [Usage](used_for_school_works)
-- [Contact](jonasdhernandez.19@gmail.com)
+- Features: e-commerce
+- Usage: used_for_school_works
+- Contact: jonasdhernandez.19@gmail.com
 
 ## Features
 
